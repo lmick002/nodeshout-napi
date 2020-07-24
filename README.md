@@ -1,4 +1,4 @@
-# nodeshout
+# nodeshout-napi
 
 Native libshout bindings for node.js.
 
@@ -10,31 +10,22 @@ Original libshout docs: http://www.aelius.com/njh/libshout-doc/libshout.html (a 
 
 ## Node version compability
 
-Since this project heavily depends on [node-ffi](https://github.com/node-ffi/node-ffi/) project, there can be compability issues.
-
-My tests for the current version (0.1.3):
-
-| node | npm | result |
-| -- | -- | -- |
-| 12.11.0 | 6.11.3 | :x: [node-ffi does not support node 12 yet](https://github.com/node-ffi/node-ffi/pull/544) |
-| 11.15.0 | 6.7.0 | :white_check_mark: |
-| 10.16.0 | 6.9.0 | :white_check_mark: |
-| 9.11.1 | 5.6.0 | :white_check_mark: |
-| 8.11.4 | 5.6.0 | :white_check_mark: |
-| 6.14.1 | 3.10.10 | :x: |
+This fork support newer versions of Node as well as older one.
 
 ## Usage
 
-You have to install libshout library before using nodeshout. If you work on OS X, you can install via homebrew.
+You have to install libshout library before using nodeshout. If you work on Windows, you'll need the libshout dll.
 
 ```
+yum install libshout
+apt-get install libshout    
 brew install libshout
 ```
 
 Then, install nodeshout via npm.
 
 ```
-npm i nodeshout
+npm i nodeshout-napi
 ```
 
 Initalize nodeshout library, create a `Shout` instance and configure it.

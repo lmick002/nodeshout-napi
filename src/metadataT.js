@@ -1,11 +1,11 @@
-var libshout = require('./libshout');
+const libshout = require('./libshout');
 
 
 /**
  * Base class for metadata_t structure.
  * @constructor
  */
-var metadataT = function() {
+let metadataT = function() {
     this.ptr = libshout.shout_metadata_new();
 };
 

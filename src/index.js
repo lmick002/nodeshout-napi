@@ -1,4 +1,4 @@
-var libshout = require('./libshout'),
+let libshout = require('./libshout'),
     shoutT = require('./shoutT'),
     metadataT = require('./metadataT'),
     nodeshout = {};
@@ -36,9 +36,9 @@ nodeshout.shutdown = function() {
  */
 nodeshout.getVersion = function() {
     // Dummy buffers
-    var buff1 = new Buffer(100);
-    var buff2 = new Buffer(100);
-    var buff3 = new Buffer(100);
+    let buff1 = new Buffer.alloc(100);
+    let buff2 = new Buffer.alloc(100);
+    let buff3 = new Buffer.alloc(100);
 
     return libshout.shout_version(buff1, buff2, buff3);
 };

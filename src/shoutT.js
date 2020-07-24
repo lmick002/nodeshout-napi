@@ -1,11 +1,11 @@
-var libshout = require('./libshout');
+const libshout = require('./libshout');
 
 
 /**
  * Base class for shout_t structure.
  * @constructor
  */
-var shoutT = function() {
+let shoutT = function() {
     this.ptr = libshout.shout_new();
 };
 

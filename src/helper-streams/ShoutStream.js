@@ -1,5 +1,5 @@
-var util = require('util'),
-    stream = require('stream');
+const util = require('util'),
+	stream = require('stream');
 
 
 /**
@@ -7,10 +7,10 @@ var util = require('util'),
  * @constructor
  * @param {shoutT} shout
  */
-var ShoutStream = function(shout) {
-    stream.Writable.call(this);
+let ShoutStream = function(shout) {
+	stream.Writable.call(this);
 
-    this.shout = shout;
+	this.shout = shout;
 };
 util.inherits(ShoutStream, stream.Writable);
 
@@ -22,14 +22,14 @@ util.inherits(ShoutStream, stream.Writable);
  * @param {function} done
  */
 ShoutStream.prototype._write = function(chunk, encoding, done) {
-    this.shout.send(chunk, chunk.length);
+	this.shout.send(chunk, chunk.length);
 
-    var that = this,
-        delay = Math.abs(this.shout.delay());
+	let that = this,
+		delay = Math.abs(this.shout.delay());
 
-    setTimeout(function() {
-        done();
-    }, delay);
+	setTimeout(function() {
+		done();
+	}, delay);
 };
 
 
