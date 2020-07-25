@@ -9,13 +9,12 @@ class ShoutStream extends stream.Writable {
 	}
 
 	_write = function (chunk, encoding, done) {
-		this.shout.send(chunk, chunk.length);
-
-		let delay = Math.abs(this.shout.delay());
-
+		// weird fix for a weird problem, but it works so forget about it
+		let that = this;
 		setTimeout(function () {
+			that.shout.send(chunk, chunk.length);
 			done();
-		}, delay);
+		}, this.shout.delay());
 	};
 }
 
