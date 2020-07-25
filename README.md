@@ -1,4 +1,5 @@
 # nodeshout-napi
+[![NPM](https://nodei.co/npm/nodeshout-napi.png)](https://nodei.co/npm/nodeshout-napi/)
 
 Native libshout bindings for node.js.
 
@@ -55,7 +56,8 @@ shout.setAudioInfo('channels', '2');
 Open the connection.
 
 ```js
-shout.open();
+if (shout.open() !== nodeshout.ErrorTypes.SUCCESS)
+    throw 0;
 ```
 
 If connection is successful, above function will return `nodeshout.ErrorTypes.SUCCESS` which is integer `0`. After successful connection, you can send audio file chunks via `shout.send` method.

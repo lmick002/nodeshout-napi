@@ -1,34 +1,34 @@
 {
-  "name": "nodeshout-napi",
-  "version": "1.1.0",
-  "description": "Native libshout bindings for node.",
-  "main": "src/index.js",
-  "scripts": {
-	"test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "contributors": [
-	"wow wow <github@wowow.cloud>",
-	"Deniz Gurkaynak <dgurkaynak@gmail.com>"
-  ],
-  "homepage": "https://github.com/wow0000/nodeshout-napi",
-  "repository": {
-	"type": "git",
-	"url": "https://github.com/wow0000/nodeshout-napi"
-  },
-  "bugs": {
-	"url": "https://github.com/wow0000/nodeshout-napi/issues"
-  },
-  "keywords": [
-	"libshout",
-	"icecast",
-	"stream",
-	"radio",
-	"node-12",
-	"ES6"
-  ],
-  "license": "ISC",
-  "dependencies": {
-	"ffi-napi": "^3.0.1",
-	"ref-napi": "^2.0.3"
-  }
+ "name": "nodeshout-napi",
+ "version": "1.1.1",
+ "description": "Native libshout bindings for node.",
+ "main": "src/index.js",
+ "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1"
+ },
+ "contributors": [
+  "wow wow <github@wowow.cloud>",
+  "Deniz Gurkaynak <dgurkaynak@gmail.com>"
+ ],
+ "homepage": "https://github.com/wow0000/nodeshout-napi",
+ "repository": {
+  "type": "git",
+  "url": "https://github.com/wow0000/nodeshout-napi"
+ },
+ "bugs": {
+  "url": "https://github.com/wow0000/nodeshout-napi/issues"
+ },
+ "keywords": [
+  "libshout",
+  "icecast",
+  "stream",
+  "radio",
+  "node-12",
+  "ES6"
+ ],
+ "license": "ISC",
+ "dependencies": {
+  "ffi-napi": "^3.0.1",
+  "ref-napi": "^2.0.3"
+ }
 }
