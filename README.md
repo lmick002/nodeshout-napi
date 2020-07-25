@@ -8,9 +8,11 @@ More detail: http://icecast.org
 
 Original libshout docs: http://www.aelius.com/njh/libshout-doc/libshout.html (a copy of this page can be also found at `/docs/libshout2.html`)
 
-## Node version compability
+## Node version compatibility
 
-This fork support newer versions of Node as well as older one.
+This fork supports newer versions of Node as well as older one.
+
+This fork supports all major OS, including Windows, macOS and Linux.
 
 ## Usage
 
@@ -31,6 +33,7 @@ npm i nodeshout-napi
 Initalize nodeshout library, create a `Shout` instance and configure it.
 
 ```js
+const nodeshout = require("nodeshout-napi");
 // Initalize
 nodeshout.init();
 
@@ -83,7 +86,7 @@ Helper streams make all the things super-easy. You don't have to deal with readi
 Include helper stream classes.
 
 ```js
-const { FileReadStream, ShoutStream } = require('nodeshout');
+const { FileReadStream, ShoutStream } = require('nodeshout-napi');
 ```
 
 and then pipe them together. That's all!
