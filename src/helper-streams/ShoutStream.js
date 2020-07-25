@@ -1,36 +1,22 @@
-const util = require('util'),
-	stream = require('stream');
+// wow - 2020
 
+const stream = require('stream');
 
-/**
- *
- * @constructor
- * @param {shoutT} shout
- */
-let ShoutStream = function(shout) {
-	stream.Writable.call(this);
+class ShoutStream extends stream.Writable {
+	constructor(shout) {
+		super();
+		this.shout = shout;
+	}
 
-	this.shout = shout;
-};
-util.inherits(ShoutStream, stream.Writable);
+	_write = function (chunk, encoding, done) {
+		this.shout.send(chunk, chunk.length);
 
+		let delay = Math.abs(this.shout.delay());
 
-/**
- * This method sends recieved buffer to icecast server and handles delay.
- * @param {Buffer} chunk
- * @param {string} encoding
- * @param {function} done
- */
-ShoutStream.prototype._write = function(chunk, encoding, done) {
-	this.shout.send(chunk, chunk.length);
-
-	let that = this,
-		delay = Math.abs(this.shout.delay());
-
-	setTimeout(function() {
-		done();
-	}, delay);
-};
-
+		setTimeout(function () {
+			done();
+		}, delay);
+	};
+}
 
 module.exports = ShoutStream;
