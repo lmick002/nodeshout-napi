@@ -12,7 +12,7 @@ class metadataT {
 	/**
 	 * Free allocated memory.
 	 */
-	free = function () {
+	free() {
 		libshout.shout_metadata_free(this.ptr);
 	};
 
@@ -24,7 +24,7 @@ class metadataT {
 	 * @param {string} value
 	 * @return {number}
 	 */
-	add = function (name, value) {
+	add(name, value) {
 		return libshout.shout_metadata_add(this.ptr, name, value);
 	};
 }
