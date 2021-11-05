@@ -12,7 +12,7 @@ class shoutT {
 	/**
 	 * Free allocated memory.
 	 */
-	free = function () {
+	free() {
 		libshout.shout_free(this.ptr);
 	};
 
@@ -21,7 +21,7 @@ class shoutT {
 	 * Only valid until the next call affecting this connection.
 	 * @return {string}
 	 */
-	getError = function () {
+	getError() {
 		return libshout.shout_get_error(this.ptr);
 	};
 
@@ -29,7 +29,7 @@ class shoutT {
 	 * Returns if this client is currently connected
 	 * @returns {number}
 	 */
-	getConnected = function() {
+	getConnected() {
 		return libshout.shout_get_connected(this.ptr);
 	};
 
@@ -38,7 +38,7 @@ class shoutT {
 	 * @param {string} host
 	 * @return {number}
 	 */
-	setHost = function (host) {
+	setHost(host) {
 		return libshout.shout_set_host(this.ptr, host);
 	};
 
@@ -48,7 +48,7 @@ class shoutT {
 	 * @param {number} port
 	 * @return {number}
 	 */
-	setPort = function (port) {
+	setPort(port) {
 		return libshout.shout_set_port(this.ptr, port);
 	};
 
@@ -59,7 +59,7 @@ class shoutT {
 	 * @param {string} user
 	 * @return {number}
 	 */
-	setUser = function (user) {
+	setUser(user) {
 		return libshout.shout_set_user(this.ptr, user);
 	};
 
@@ -70,7 +70,7 @@ class shoutT {
 	 * @param {string} password
 	 * @return {number}
 	 */
-	setPassword = function (password) {
+	setPassword(password) {
 		return libshout.shout_set_password(this.ptr, password);
 	};
 
@@ -80,7 +80,7 @@ class shoutT {
 	 * @param {string} mount
 	 * @return {number}
 	 */
-	setMount = function (mount) {
+	setMount(mount) {
 		return libshout.shout_set_mount(this.ptr, mount);
 	};
 
@@ -90,7 +90,7 @@ class shoutT {
 	 * @param {string} name
 	 * @return {number}
 	 */
-	setName = function (name) {
+	setName(name) {
 		return libshout.shout_set_name(this.ptr, name);
 	};
 
@@ -100,7 +100,7 @@ class shoutT {
 	 * @param {string} url
 	 * @return {number}
 	 */
-	setUrl = function (url) {
+	setUrl(url) {
 		return libshout.shout_set_url(this.ptr, url);
 	};
 
@@ -110,7 +110,7 @@ class shoutT {
 	 * @param {string} genre
 	 * @return {number}
 	 */
-	setGenre = function (genre) {
+	setGenre(genre) {
 		return libshout.shout_set_genre(this.ptr, genre);
 	};
 
@@ -121,7 +121,7 @@ class shoutT {
 	 * @param {string} agent
 	 * @return {number}
 	 */
-	setAgent = function (agent) {
+	setAgent(agent) {
 		return libshout.shout_set_agent(this.ptr, agent);
 	};
 
@@ -131,7 +131,7 @@ class shoutT {
 	 * @param {string} description
 	 * @return {number}
 	 */
-	setDescription = function (description) {
+	setDescription(description) {
 		return libshout.shout_set_description(this.ptr, description);
 	};
 
@@ -144,7 +144,7 @@ class shoutT {
 	 * @param {string} value
 	 * @return {number}
 	 */
-	setAudioInfo = function (key, value) {
+	setAudioInfo(key, value) {
 		return libshout.shout_set_audio_info(this.ptr, key, value);
 	};
 
@@ -155,7 +155,7 @@ class shoutT {
 	 * @param {boolean} isPublic
 	 * @return {number}
 	 */
-	setPublic = function (isPublic) {
+	setPublic(isPublic) {
 		return libshout.shout_set_public(this.ptr, isPublic ? 1 : 0);
 	};
 
@@ -166,7 +166,7 @@ class shoutT {
 	 * @param {number} format
 	 * @return {number}
 	 */
-	setFormat = function (format) {
+	setFormat(format) {
 		return libshout.shout_set_format(this.ptr, format);
 	};
 
@@ -177,7 +177,7 @@ class shoutT {
 	 * @param {number} protocol
 	 * @return {number}
 	 */
-	setProtocol = function (protocol) {
+	setProtocol(protocol) {
 		return libshout.shout_set_protocol(this.ptr, protocol);
 	};
 
@@ -186,7 +186,7 @@ class shoutT {
 	 * Opens a connection to a server. All connection parameters must have been set prior to this call.
 	 * @return {number}
 	 */
-	open = function () {
+	open() {
 		return libshout.shout_open(this.ptr);
 	};
 
@@ -195,7 +195,7 @@ class shoutT {
 	 * Closes a connection to the server.
 	 * @return {number}
 	 */
-	close = function () {
+	close() {
 		return libshout.shout_close(this.ptr);
 	};
 
@@ -207,7 +207,7 @@ class shoutT {
 	 * @param {number} length
 	 * @return {number}
 	 */
-	send = function (buff, length) {
+	send(buff, length) {
 		return libshout.shout_send(this.ptr, buff, length);
 	};
 
@@ -218,7 +218,7 @@ class shoutT {
 	 * that audio data is sent to the server at the correct speed. Alternatively, the caller may
 	 * use shout_delay to determine the number of milliseconds to wait and delay itself.
 	 */
-	sync = function () {
+	sync() {
 		return libshout.shout_sync(this.ptr);
 	};
 
@@ -229,7 +229,7 @@ class shoutT {
 	 * to do other processing in the meantime.
 	 * @return {number}
 	 */
-	delay = function () {
+	delay() {
 		return libshout.shout_delay(this.ptr);
 	};
 
@@ -242,7 +242,7 @@ class shoutT {
 	 * @param {metadataT} metadata
 	 * @return {number}
 	 */
-	setMetadata = function (metadata) {
+	setMetadata(metadata) {
 		return libshout.shout_set_metadata(this.ptr, metadata.ptr);
 	};
 }
