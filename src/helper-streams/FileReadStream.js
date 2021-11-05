@@ -28,7 +28,7 @@ class FileReadStream extends stream.Readable {
 	 * Resets class properties.
 	 */
 
-	reset = function () {
+	reset() {
 		this.file = null;
 		this.fileSize = null;
 		this.totalBytesRead = null;
@@ -40,7 +40,7 @@ class FileReadStream extends stream.Readable {
 	 * Opens and gets stats of file.
 	 */
 
-	start = function () {
+	start() {
 		this.fd = fs.openSync(this.file, 'r');
 
 		const stats = fs.fstatSync(this.fd);
@@ -53,7 +53,7 @@ class FileReadStream extends stream.Readable {
 	 * @override
 	 */
 
-	_read = function () {
+	_read() {
 		if (this.totalBytesRead >= this.fileSize) {
 			// File is finished.
 			fs.closeSync(this.fd);
