@@ -8,7 +8,7 @@ class ShoutStream extends stream.Writable {
 		this.shout = shout;
 	}
 
-	_write = function (chunk, encoding, done) {
+	_write(chunk, encoding, done) {
 		// weird fix for a weird problem, but it works so forget about it
 		let that = this;
 		setTimeout(function () {
