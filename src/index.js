@@ -16,7 +16,7 @@ nodeshout.libshout_ = libshout;
  * Initializes the shout library. This function must always be called before
  * any other libshout function.
  */
-nodeshout.init() {
+nodeshout.init = function() {
     libshout.shout_init();
 };
 
@@ -25,7 +25,7 @@ nodeshout.init() {
  * Releases any resources which may have been allocated by a call to shout_init.
  * An application should call this function after it has finished using libshout.
  */
-nodeshout.shutdown() {
+nodeshout.shutdown = function() {
     libshout.shout_shutdown();
 };
 
@@ -34,7 +34,7 @@ nodeshout.shutdown() {
  * Gets libshout version.
  * @return {string}
  */
-nodeshout.getVersion() {
+nodeshout.getVersion = function() {
     // Dummy buffers
     let buff1 = new Buffer.alloc(100);
     let buff2 = new Buffer.alloc(100);
@@ -49,7 +49,7 @@ nodeshout.getVersion() {
  * The result should be disposed of with free when you are finished with it.
  * @return {shoutT}
  */
-nodeshout.create() {
+nodeshout.create = function() {
     return new shoutT();
 };
 
@@ -59,7 +59,7 @@ nodeshout.create() {
  * The result should be disposed of with free when you are finished with it.
  * @return {metadataT}
  */
-nodeshout.createMetadata() {
+nodeshout.createMetadata = function() {
     return new metadataT();
 };
 
